@@ -1,0 +1,22 @@
+{
+  "name": "ioi-challenge",
+  "version": "1.0.0",
+  "description": "Packages for backend connectivity",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lonelysamu/IOI-Challenge.git"
+  },
+  "author": "Joshua JS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lonelysamu/IOI-Challenge/issues"
+  },
+  "homepage": "https://github.com/lonelysamu/IOI-Challenge#readme",
+  "dependencies": {
+    "parsehub": "^0.1.1"
+  }
+}
