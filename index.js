@@ -1,5 +1,6 @@
 
-document.getElementById('searchBtn').addEventListener("click",function() {
+document.getElementById('searchBtn').addEventListener("click",function(e) {
+    e.preventDefault();
     const searchQuery = document.getElementById('searchQuery').innerHTML;
     const url = 'https://www.parsehub.com/api/v2/projects/tKOTHZu4srR8/run';
     // Data to be sent to the API
