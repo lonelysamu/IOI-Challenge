@@ -9,6 +9,7 @@ document.getElementById('searchBtn').addEventListener("click",function(e) {
     }
 
     let fetchData = {
+        uri : 'https://www.parsehub.com/api/v2/projects/tKOTHZu4srR8/run',
         method: 'POST',
         form: {
             api_key: "tAtNUA5xWWyC",
