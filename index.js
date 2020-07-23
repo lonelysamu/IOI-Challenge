@@ -1,24 +1,18 @@
-var ParseHub = require('parsehub');
-var api = new ParseHub("tAtNUA5xWWyC");
+var request = require('request');
 
-const express = require('express');
-
-api.getAllJobs(function(err, jobs)
-{
-    console.log(err);
-    console.log(jobs);
-});
-api.getAllJobs({ include_last_run: true }, function(err, jobs)
-{
-    console.log(err);
-    console.log(jobs);
-});
-
-api.runJob({ token: 'tKOTHZu4srR8' }, function(err, runToken)
-{
-    console.log(err);
-    console.log(runToken);
-});
+request({
+    uri: 'https://www.parsehub.com/api/v2/projects/tKOTHZu4srR8/run',
+    method: 'POST',
+    form: {
+      api_key: "tAtNUA5xWWyC",
+      start_url: "http://www.example.com",
+      start_template: "main_template",
+      start_value_override: "{\"query\": \"San Francisco\"}",
+      send_email: "1"
+    }
+  }, function(err, resp, body) {
+    console.log(body);
+  });
 
 /*
 // Set up express app

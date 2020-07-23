@@ -17,10 +17,6 @@
   },
   "homepage": "https://github.com/lonelysamu/IOI-Challenge#readme",
   "dependencies": {
-    "@hapi/hawk": "^8.0.0",
-    "@hapi/hoek": "^9.0.4",
-    "cryptiles": "^4.1.3",
-    "express": "^4.17.1",
     "mime": "^2.4.6",
     "parsehubv2": "^1.0.3",
     "qs": "^6.9.4",
