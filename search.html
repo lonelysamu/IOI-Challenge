@@ -333,34 +333,34 @@
                         var tmp = data.Prop;
                         for(var i =0;i<tmp.length;i++) {
                         if( 
-                            (($('input[name=opt-loc]:checked').val() == tmp[i].location) || ($('input[name=opt-loc]:checked').val() == 'All') )
-                            &&
-                            (($('input[name=opt-type]:checked').val() == tmp[i].type) || ($('input[name=opt-type]:checked').val() == 'All') )    
+                            (($('input[name=opt-loc]:checked').val() == tmp[i].location) || ($('input[name=opt-loc]:checked').val() == 'All') )    
                         )   {
-                        htmledit +=
-                            (`
-                                <br>
-                                <div class="row">
-                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                                        <img src="`+tmp[i].img+`" class="w-100" id="img2" alt="place image here">
-                                    </div>
-                                    <div class="col-12 col-md-8">
+                        if( ($('input[name=opt-type]:checked').val() == tmp[i].type) || ($('input[name=opt-type]:checked').val() == 'All') ){
+                                htmledit +=
+                                    `
                                         <br>
-                                        <h1 id="name`+i+`">`+tmp[i].Name+`</h1>
-                                        <h2 id="location`+i+`">`+tmp[i].location+`</h2>
-                                        <h3 id="price`+i+`">`+tmp[i].price+`</h3>
+                                        <div class="row">
+                                            <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                                                <img src="`+tmp[i].img+`" class="w-100" id="img2" alt="place image here">
+                                            </div>
+                                            <div class="col-12 col-md-8">
+                                                <br>
+                                                <h1 id="name`+i+`">`+tmp[i].Name+`</h1>
+                                                <h2 id="location`+i+`">`+tmp[i].location+`</h2>
+                                                <h3 id="price`+i+`">`+tmp[i].price+`</h3>
+                                                <br>
+                                                <p id="des`+i+`">`+tmp[i].desc+`</p>
+
+                                                <br>
+
+                                                <p id="link`+i+`">`+tmp[i].link+`</p>
+
+                                            </div>
+
+                                        </div>
                                         <br>
-                                        <p id="des`+i+`">`+tmp[i].desc+`</p>
-
-                                        <br>
-
-                                        <p id="link`+i+`">`+tmp[i].link+`</p>
-
-                                    </div>
-
-                                </div>
-                                <br>
-                                `);
+                                        `;
+                                }
                             }
                         }
                         $('#prop-container').html(htmledit);
@@ -372,34 +372,34 @@
                         var tmp = data.Prop;
                         for(var i =0;i<tmp.length;i++) {
                         if( 
-                            ($('input[name=opt-loc]:checked').val() == tmp[i].location) || ($('input[name=opt-loc]:checked').val() == 'All') 
-                            &&
-                            ($('input[name=opt-type]:checked').val() == tmp[i].type) || ($('input[name=opt-type]:checked').val() == 'All')     
+                            (($('input[name=opt-loc]:checked').val() == tmp[i].location) || ($('input[name=opt-loc]:checked').val() == 'All') )    
                         )   {
-                        htmledit +=
-                            (`
-                                <br>
-                                <div class="row">
-                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                                        <img src="`+tmp[i].img+`" class="w-100" id="img2" alt="place image here">
-                                    </div>
-                                    <div class="col-12 col-md-8">
+                        if( ($('input[name=opt-type]:checked').val() == tmp[i].type) || ($('input[name=opt-type]:checked').val() == 'All') ){
+                                htmledit +=
+                                    `
                                         <br>
-                                        <h1 id="name`+i+`">`+tmp[i].Name+`</h1>
-                                        <h2 id="location`+i+`">`+tmp[i].location+`</h2>
-                                        <h3 id="price`+i+`">`+tmp[i].price+`</h3>
+                                        <div class="row">
+                                            <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                                                <img src="`+tmp[i].img+`" class="w-100" id="img2" alt="place image here">
+                                            </div>
+                                            <div class="col-12 col-md-8">
+                                                <br>
+                                                <h1 id="name`+i+`">`+tmp[i].Name+`</h1>
+                                                <h2 id="location`+i+`">`+tmp[i].location+`</h2>
+                                                <h3 id="price`+i+`">`+tmp[i].price+`</h3>
+                                                <br>
+                                                <p id="des`+i+`">`+tmp[i].desc+`</p>
+
+                                                <br>
+
+                                                <p id="link`+i+`">`+tmp[i].link+`</p>
+
+                                            </div>
+
+                                        </div>
                                         <br>
-                                        <p id="des`+i+`">`+tmp[i].desc+`</p>
-
-                                        <br>
-
-                                        <p id="link`+i+`">`+tmp[i].link+`</p>
-
-                                    </div>
-
-                                </div>
-                                <br>
-                                `);
+                                        `;
+                                }
                             }
                         }
                         $('#prop-container').html(htmledit);
