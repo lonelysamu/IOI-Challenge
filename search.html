@@ -435,32 +435,39 @@
                 });
             })
             $.getJSON("data.json", function (data) {
-                var tmp = data.Prop;
-                for (var i = 0; i < tmp.length; i++) {
-                    if(tmp[i].a=="1")    {
-                        $('#prop-container').append(`
-                            <br>
-                            <div class="row">
-                                <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                                    <img src="`+ tmp[i].img + `" class="w-100" id="img2" alt="place image here">
+                var tmp_idx=0;
+                $.getJSON("psf.json", function(Da) {
+                    var psf  = Da.Cost;
+                    var tmp = data.Prop;
+                    for (var i = 0; i < tmp.length; i++) {
+                        for (tmp_idx=0;tmp_idx<psf.length;tmp_idx++) {
+                            if(psf[tmp_idx].loc == tmp[i].location) {break;}
+                        }
+                        if(tmp[i].a=="1")    {
+                            $('#prop-container').append(`
+                                <br>
+                                <div class="row">
+                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                                        <img src="`+ tmp[i].img + `" class="w-100" id="img2" alt="place image here">
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <br>
+                                        <h1 id="name`+ i + `">` + tmp[i].Name + ` , ` + tmp[i].location + `</h1>
+                                        <h4 id="price`+ i + `">` + tmp[i].price + ` ( PSF : `+tmp[i].psf+` )</h4>
+                                        <h4 id="price`+ i + `">Average PSF of property =`+psf[tmp_idx].psf+`</h4>
+                                        <br>
+                                        <p id="des`+ i + `">` + tmp[i].desc + `</p>
+                                        <a class="btn btn-primary btn-xs " style="background-color:grey;" href="`+tmp[i].link+`" id="link`+i+`">Go to Site</a>
+
+
+                                    </div>
+
                                 </div>
-                                <div class="col-12 col-md-8">
-                                    <br>
-                                    <h1 id="name`+ i + `">` + tmp[i].Name + `</h1>
-                                    <h2 id="location`+ i + `">` + tmp[i].location + `</h2>
-                                    <h3 id="price`+ i + `">` + tmp[i].price + `</h3>
-                                    <br>
-                                    <p id="des`+ i + `">` + tmp[i].desc + `</p>
-                                    <a class="btn btn-primary btn-xs " style="background-color:grey;" href="`+tmp[i].link+`" id="link`+i+`">Go to Site</a>
-
-
-                                </div>
-
-                            </div>
-                            <br>
-                            `);
+                                <br>
+                                `);
+                        }
                     }
-                }
+                })
             });
         </script>
 

@@ -1,0 +1,20 @@
+{
+    "Cost": [
+      {
+        "loc": "Selangor",
+        "psf": "RM557 - RM890"
+      },
+      {
+        "loc": "Penang",
+        "psf": "RM497 - RM719"
+      },
+      {
+        "loc": "Negeri Sembilan",
+        "psf": "RM58 - RM125"
+      },
+      {
+        "loc": "Johor",
+        "psf": "RM404 - RM557"
+      }
+    ]
+  }
