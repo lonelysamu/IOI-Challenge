@@ -7,6 +7,7 @@
           "bed": "4",
           "bath": "2",
           "price": "RM235,800++",
+          "a" : "1",
           "type": "House",
           "link": "https://www.ioiproperties.com.my/bandar-ioi-bahau-negeri-sembilan/areca-b-single-storey",
           "desc": "Located in the vibrant 500 acre township named Bandar IOI is devloped by IOI Properties Group. Bandar IOI, Bahau is a Freehold development that comprises of commercial and residential developments. Areca B is our first affordable home development in Bandar IOI. This single storey affordable home that is designed for today's modern family especially young starter family."
@@ -18,6 +19,7 @@
           "bed": "4",
           "bath": "2",
           "price" : "RM323,765++",
+          "a" : "1",
           "type": "House",
           "link": "https://www.ioiproperties.com.my/bandar-putra-kulai-johor/alena",
           "desc": "With a stylish facade and practical interiors, Alena single-storey terrace house is made for families who want to stay close-knit and spend quality time together. Set amidst greenery, Alena is also close to all of Bandar Putra’s amenities such as schools, shopping mall and sports centre.   price = RM323,765++"
@@ -29,6 +31,7 @@
           "bed": "4",
           "bath": "2",
           "type": "House",
+          "a" : "1",
           "price": "RM323,765++",
           "link": "https://www.ioiproperties.com.my/bandar-putra-kulai-johor/alena-2",
           "desc": "Enjoy carefree days living in an Alena 2 single-storey terrace house. Easy to maintain, Alena is ideal for busy young couples or parents who don’t want the hassle of handling endless household chores. With its practical design and welcoming façade, Alena 2 makes a cosy home that you’ll look forward to coming home to every day"
@@ -40,6 +43,7 @@
           "bed": "4",
           "bath": "2",
           "price": "RM340,900++",
+          "a" : "1",
           "type": "House",
           "desc": "Stylish, modern and practical, Verana single storey terrace is a spacious well-planned home for couples and families. Surrounded by greenery, Verana offers sleek and contemporary facades smartly incorporated with practical layouts",
           "link": "https://www.ioiproperties.com.my/bandar-putra-kulai-johor/verana"
@@ -51,6 +55,7 @@
           "bed": "2-4",
           "bath": "1-3",
           "price": "RM407,447++",
+          "a" : "1",
           "type": "Condo",
           "link": "https://www.ioiproperties.com.my/marina-cove/marina-cove-wave-serviced-apartment",
           "desc": "Marina Cove is located at Tebrau Coast, it is within a short distance to vital infrastructure facilities including the Eastern Dispersal Link (EDL), Tebrau Highway and Tun Abdul Razak Highway, also a short drive to Custom & Immigration Quarantine Sultan Iskandar Complex (CIQ)/ JB Sentral and Woodlands Checkpoint, Singapore. There are wide range of amenities like private and international schools, hospitals and medical centres, as well as leisure and commercial hubs close-by."
@@ -62,6 +67,7 @@
           "bed": "4",
           "bath": "4",
           "price": "RM419,800++",
+          "a" : "1",
           "type": "House",
           "link": "https://www.ioiproperties.com.my/bandar-ioi-bahau-negeri-sembilan/chengal-superlink-home",
           "desc": "Stylishly designed with a 24' width Chengal offers you well-proportioned living spaces for enhanced comfort, all within a guarded and exclusive community in a modern township."
@@ -74,6 +80,7 @@
           "bath": "2",
           "type": "Condo",
           "price": "RM682,800++",
+          "a" : "1",
           "link": "https://www.ioiproperties.com.my/desaria-penang/dzone-condominium",
           "desc": "Situated along Jalan Teluk Kumbar, D’zone is located close to Penang 2nd Bridge, just minutes away from the established neighbourhoods of Sungai Ara and Bayan Baru. Residents can enjoy convenient access to major highways, Public amenities and township facilities. D’zone Condominium has received a Highly Commended accolade Best Mid-Range Condo Development (North Malaysia ) in the 2014 South East Asia Property Awards (Malaysia)."
         },
@@ -85,6 +92,7 @@
         "bath": "3",
         "type": "House",
         "price": "RM837,800++",
+        "a" : "2",
         "desc": "N’Dira is a collection of distinct homes within a gated community and is surrounded by lush greenery and serenity. All to give you the peace of mind to enjoy a modern lifestyle in a modern home.",
         "link": "https://www.ioiproperties.com.my/16-sierra-puchong-south/ndira-townhouse"
       },
@@ -95,6 +103,7 @@
         "bed": "4",
         "bath": "4",
         "price": "RM1,032,800++",
+        "a" : "2",
         "type": "House",
         "link": "https://www.ioiproperties.com.my/16-sierra-puchong-south/avens-2-storey-terrace",
         "desc": "Avens brings you another promising living experience within its 27-acre of peaceful yet serene living space which yearned by many modern-living people today."
@@ -106,6 +115,7 @@
         "bed": "5",
         "bath": "4",
         "price": "RM1,203,800++",
+        "a" : "2",
         "type": "House",
         "link": "https://www.ioiproperties.com.my/16-sierra-puchong-south/dumalis-2-2-storey-superlink",
         "desc": "Like a fresh bloom, 16 Sierra now sees an addition to their collection of fine homes. Dumalis 2 - modern, stylish and spacious. Named after a rose, Dumalis 2 strikes a delicate balance between grace and charm. Dumalis 2 is a 2-storey superlink home that comes with a large built up & high ceiling height. As with any other precincts in 16 Sierra, Dumalis 2 comes with its own themed garden - the whimsical Chimes Garden."
@@ -117,6 +127,7 @@
         "bed": "4",
         "bath": "3",
         "price": "RM1,458,800++",
+        "a" : "2",
         "type": "House",
         "link": "https://www.ioiproperties.com.my/desaria-penang/stramax-residences",
         "desc": "Stramax is the last piece of garden terraces in the exclusive Desaria housing scheme. It offers the lifestyle of your dreams amidst a green and pristine environment."
@@ -129,6 +140,7 @@
         "bath": "5",
         "type": "House",
         "price": "RM1,612,800++",
+        "a" : "2",
         "link": "https://www.ioiproperties.com.my/16-sierra-puchong-south/sierra-6-3-storey-linked-semi-d",
         "desc": "Living spaces especially designed to create a sense of spaciousness is now possible with homes in Sierra 6, 3-Storey Linked Semi-D. Look forward to coming home to a safe and cozy and green community."
       },
@@ -141,6 +153,7 @@
         "type": "House",
         "link": "https://www.ioiproperties.com.my/16-sierra-puchong-south/lyden-terrace-house",
         "price": "RM1,811,000++",
+        "a" : "2",
         "desc": "Lyden, one of 16 Sierra's residential precints, makes it easy for your family to enjoy a refreshing and active lifestyle. At your doorstep is the Algebra Garden where your child can have great fun playing with equations, numbers and mathematical forms."
       }
     ]
