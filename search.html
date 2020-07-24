@@ -77,55 +77,55 @@
     <div class="container d-flex justify-content-center">
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
-                <input type="radio" name="opt-loc" id="option7" checked> Johor
+                <input type="radio" name="opt-loc" id="option6" value="All" checked> All
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option8"> Kedah
+                <input type="radio" name="opt-loc" id="option7" value="Johor"> Johor
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option9"> Kelantan
+                <input type="radio" name="opt-loc" id="option8" value="Kedah" > Kedah
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option10"> Melaka
+                <input type="radio" name="opt-loc" id="option9" value="Kelantan"> Kelantan
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option11"> Negeri Sembilan
+                <input type="radio" name="opt-loc" id="option10" value="Melaka"> Melaka
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option12"> Pahang
+                <input type="radio" name="opt-loc" id="option11" value="Negeri Sembilan"> Negeri Sembilan
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option13"> Penang
+                <input type="radio" name="opt-loc" id="option12" value="Pahang"> Pahang
+            </label>
+            <label class="btn btn-secondary">
+                <input type="radio" name="opt-loc" id="option13" value="Penang"> Penang
             </label>
 
             <br>
             
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option14"> Perak
+                <input type="radio" name="opt-loc" id="option14" value="Perak"> Perak
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option15"> Perlis
+                <input type="radio" name="opt-loc" id="option15" value="Perlis"> Perlis
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option16"> Sabah
+                <input type="radio" name="opt-loc" id="option16" value="Sabah"> Sabah
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option17"> Sarawak
+                <input type="radio" name="opt-loc" id="option17" value="Sarawak"> Sarawak
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option18"> Selangor
+                <input type="radio" name="opt-loc" id="option18" value="Selangor"> Selangor
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option19">Terengganu
+                <input type="radio" name="opt-loc" id="option19" value="Terengganu">Terengganu
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option20"> Kuala Lumpur
+                <input type="radio" name="opt-loc" id="option20" value="Kuala Lumpur"> Kuala Lumpur
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option21"> Labuan
-            </label>
-            <label class="btn btn-secondary">
-                <input type="radio" name="opt-loc" id="option22"> Perlis
+                <input type="radio" name="opt-loc" id="option21" value="Labuan"> Labuan
             </label>
         </div>
     </div>
@@ -322,37 +322,78 @@
 
 
         <script>
+            $(document).ready(function(){
+                var htmledit="";
+                    $("input[name=opt-loc]").change(function(){
+                        htmledit="";
+                        $.getJSON("data.json",function(data){
+                        var tmp = data.Prop;
+                        for(var i =0;i<tmp.length;i++) {
+                        if( ($('input[name=opt-loc]:checked').val() == tmp[i].location) || ($('input[name=opt-loc]:checked').val() == 'All') )   {
+                        htmledit +=
+                            (`
+                                <br>
+                                <div class="row">
+                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                                        <img src="`+tmp[i].img+`" class="w-100" id="img2" alt="place image here">
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <br>
+                                        <h1 id="name`+i+`">`+tmp[i].Name+`</h1>
+                                        <h2 id="location`+i+`">`+tmp[i].location+`</h2>
+                                        <h3 id="price`+i+`">`+tmp[i].price+`</h3>
+                                        <br>
+                                        <p id="des2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci, beatae
+                                            dolore, nam
+                                            nulla, numquam temporibus libero ut aliquam quisquam quam unde! Sint laudantium cupiditate molestias
+                                            id libero, facilis optio vero vel? Iste possimus, exercitationem odit blanditiis perspiciatis, nulla
+                                            temporibus tempora molestias, quibusdam porro unde. Inventore neque quis tempora reprehenderit.</p>
+
+                                        <br>
+
+                                        <p id="link2">place link here</p>
+
+                                    </div>
+
+                                </div>
+                                <br>
+                                `);
+                            }
+                        }
+                        $('#prop-container').html(htmledit);
+                        });
+                });
+            })
                 $.getJSON("data.json",function(data){
                 var tmp = data.Prop;
                 for(var i =0;i<tmp.length;i++) {
-                $('#prop-container').append(`
-                    <br>
-                    <div class="row">
-                        <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
-                            <img src="`+tmp[i].img+`" class="w-100" id="img2" alt="place image here">
+                    $('#prop-container').append(`
+                        <br>
+                        <div class="row">
+                            <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                                <img src="`+tmp[i].img+`" class="w-100" id="img2" alt="place image here">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <br>
+                                <h1 id="name`+i+`">`+tmp[i].Name+`</h1>
+                                <h2 id="location`+i+`">`+tmp[i].location+`</h2>
+                                <h3 id="price`+i+`">`+tmp[i].price+`</h3>
+                                <br>
+                                <p id="des2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci, beatae
+                                    dolore, nam
+                                    nulla, numquam temporibus libero ut aliquam quisquam quam unde! Sint laudantium cupiditate molestias
+                                    id libero, facilis optio vero vel? Iste possimus, exercitationem odit blanditiis perspiciatis, nulla
+                                    temporibus tempora molestias, quibusdam porro unde. Inventore neque quis tempora reprehenderit.</p>
+
+                                <br>
+
+                                <p id="link2">place link here</p>
+
+                            </div>
+
                         </div>
-                        <div class="col-12 col-md-8">
-                            <br>
-                            <h1 id="name`+i+`">`+tmp[i].Name+`</h1>
-                            <h2 id="location`+i+`">`+tmp[i].location+`</h2>
-                            <h3 id="price`+i+`">`+tmp[i].price+`</h3>
-                            <br>
-                            <p id="des2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci, beatae
-                                dolore, nam
-                                nulla, numquam temporibus libero ut aliquam quisquam quam unde! Sint laudantium cupiditate molestias
-                                id libero, facilis optio vero vel? Iste possimus, exercitationem odit blanditiis perspiciatis, nulla
-                                temporibus tempora molestias, quibusdam porro unde. Inventore neque quis tempora reprehenderit.</p>
-
-                            <br>
-
-                            <p id="link2">place link here</p>
-
-                        </div>
-
-                    </div>
-                    <br>
-                    `);
-                    console.log(tmp[i].Name);
+                        <br>
+                        `);
                 }
                 });
         </script>
