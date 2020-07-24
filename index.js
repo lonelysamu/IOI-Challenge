@@ -1,32 +1,4 @@
 
-document.getElementById('searchBtn').addEventListener("click",function(e) {
-    e.preventDefault();
-    const searchQuery = document.getElementById('searchQuery').innerHTML;
-    const url = 'https://www.parsehub.com/api/v2/projects/tKOTHZu4srR8/run';
-    // Data to be sent to the API
-    let data = {
-        search : searchQuery
-    }
-
-    let fetchData = {
-        uri : 'https://www.parsehub.com/api/v2/projects/tKOTHZu4srR8/run',
-        method: 'POST',
-        form: {
-            api_key: "tAtNUA5xWWyC",
-            start_url: "https://www.propertyguru.com.my/",
-            start_template: "main_template",
-            start_value_override: data,
-            send_email: "1"
-        }
-    }
-    
-    fetch(url,fetchData)
-        .then(function(err, resp, body) {
-            console.log(body);
-        });
-
-})
-
 /*
 
 
