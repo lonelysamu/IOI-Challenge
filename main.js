@@ -19,10 +19,10 @@ $.ajaxSetup({
                       if( (tmp[i].type == type) || (type == 'All') ) {
                           b_html = ``;
                           for(idx in tmp[i].b) {
-                            if(tmp[i].b[idx] == "tree")     {b_html += ` <img src="images/tree.png" alt="Outdoors" width="20" height="20">`}
-                            if(tmp[i].b[idx] == "shopping") {b_html += ` <img src="images/shopping.png" alt="Shopping" width="20" height="20">`}
-                            if(tmp[i].b[idx] == "gym")      {b_html += ` <img src="images/gym.png" alt="Exercise" width="20" height="20">`}
-                            if(tmp[i].b[idx] == "drink")    {b_html += ` <img src="images/drink.png" alt="Nightlife" width="20" height="20">`}
+                            if(tmp[i].b[idx] == "tree")     {b_html += ` <img src="images/tree.png" alt="Outdoors" width="20" height="20" title="Near to Nature, Parks nearby">`}
+                            if(tmp[i].b[idx] == "shopping") {b_html += ` <img src="images/shopping.png" alt="Shopping" width="20" height="20" title="Shopping">`}
+                            if(tmp[i].b[idx] == "gym")      {b_html += ` <img src="images/gym.png" alt="Exercise" width="20" height="20" title="Exercise facilities available">`}
+                            if(tmp[i].b[idx] == "drink")    {b_html += ` <img src="images/drink.png" alt="Nightlife" width="20" height="20" title="Social Life Hotspot">`}
                           }
                           htmlwokr += `
                           <br>
