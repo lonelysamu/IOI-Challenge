@@ -58,16 +58,19 @@
     <div class="container d-flex justify-content-center">
         <div class="btn-group btn-group-toggle" data-toggle="buttons">
             <label class="btn btn-secondary active">
-                <input type="radio" name="options" id="opt-landed" checked> Landed
+                <input type="radio" name="opt-type" value="All" checked> All
+            </label>
+            <label class="btn btn-secondary ">
+                <input type="radio" name="opt-type" value="House" > Landed
             </label>
             <!--<label class="btn btn-secondary">
-                <input type="radio" name="options" id="opt-gated"> Gated
+                <input type="radio" name="opt-type" id="opt-gated"> Gated
             </label>
             <label class="btn btn-secondary">
-                <input type="radio" name="options" id="opt-apt"> Apartment
+                <input type="radio" name="opt-type" id="opt-apt"> Apartment
             </label>-->
             <label class="btn btn-secondary">
-                <input type="radio" name="options" id="opt-condo"> Condo
+                <input type="radio" name="opt-type" value="Condo"> Condo
             </label>
         </div>
     </div>
@@ -324,12 +327,16 @@
         <script>
             $(document).ready(function(){
                 var htmledit="";
-                    $("input[name=opt-loc]").change(function(){
+                    $("input[name=opt-type]").change(function(){
                         htmledit="";
                         $.getJSON("data.json",function(data){
                         var tmp = data.Prop;
                         for(var i =0;i<tmp.length;i++) {
-                        if( ($('input[name=opt-loc]:checked').val() == tmp[i].location) || ($('input[name=opt-loc]:checked').val() == 'All') )   {
+                        if( 
+                            (($('input[name=opt-loc]:checked').val() == tmp[i].location) || ($('input[name=opt-loc]:checked').val() == 'All') )
+                            &&
+                            (($('input[name=opt-type]:checked').val() == tmp[i].type) || ($('input[name=opt-type]:checked').val() == 'All') )    
+                        )   {
                         htmledit +=
                             (`
                                 <br>
@@ -343,15 +350,50 @@
                                         <h2 id="location`+i+`">`+tmp[i].location+`</h2>
                                         <h3 id="price`+i+`">`+tmp[i].price+`</h3>
                                         <br>
-                                        <p id="des2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci, beatae
-                                            dolore, nam
-                                            nulla, numquam temporibus libero ut aliquam quisquam quam unde! Sint laudantium cupiditate molestias
-                                            id libero, facilis optio vero vel? Iste possimus, exercitationem odit blanditiis perspiciatis, nulla
-                                            temporibus tempora molestias, quibusdam porro unde. Inventore neque quis tempora reprehenderit.</p>
+                                        <p id="des`+i+`">`+tmp[i].desc+`</p>
 
                                         <br>
 
-                                        <p id="link2">place link here</p>
+                                        <p id="link`+i+`">`+tmp[i].link+`</p>
+
+                                    </div>
+
+                                </div>
+                                <br>
+                                `);
+                            }
+                        }
+                        $('#prop-container').html(htmledit);
+                        });
+                });
+                    $("input[name=opt-loc]").change(function(){
+                        htmledit="";
+                        $.getJSON("data.json",function(data){
+                        var tmp = data.Prop;
+                        for(var i =0;i<tmp.length;i++) {
+                        if( 
+                            ($('input[name=opt-loc]:checked').val() == tmp[i].location) || ($('input[name=opt-loc]:checked').val() == 'All') 
+                            &&
+                            ($('input[name=opt-type]:checked').val() == tmp[i].type) || ($('input[name=opt-type]:checked').val() == 'All')     
+                        )   {
+                        htmledit +=
+                            (`
+                                <br>
+                                <div class="row">
+                                    <div class="col-12 col-md-4 d-flex align-items-center justify-content-center">
+                                        <img src="`+tmp[i].img+`" class="w-100" id="img2" alt="place image here">
+                                    </div>
+                                    <div class="col-12 col-md-8">
+                                        <br>
+                                        <h1 id="name`+i+`">`+tmp[i].Name+`</h1>
+                                        <h2 id="location`+i+`">`+tmp[i].location+`</h2>
+                                        <h3 id="price`+i+`">`+tmp[i].price+`</h3>
+                                        <br>
+                                        <p id="des`+i+`">`+tmp[i].desc+`</p>
+
+                                        <br>
+
+                                        <p id="link`+i+`">`+tmp[i].link+`</p>
 
                                     </div>
 
@@ -379,15 +421,11 @@
                                 <h2 id="location`+i+`">`+tmp[i].location+`</h2>
                                 <h3 id="price`+i+`">`+tmp[i].price+`</h3>
                                 <br>
-                                <p id="des2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus adipisci, beatae
-                                    dolore, nam
-                                    nulla, numquam temporibus libero ut aliquam quisquam quam unde! Sint laudantium cupiditate molestias
-                                    id libero, facilis optio vero vel? Iste possimus, exercitationem odit blanditiis perspiciatis, nulla
-                                    temporibus tempora molestias, quibusdam porro unde. Inventore neque quis tempora reprehenderit.</p>
+                                <p id="des`+i+`">`+tmp[i].desc+`</p>
 
                                 <br>
 
-                                <p id="link2">place link here</p>
+                                <p id="link`+i+`">`+tmp[i].link+`</p>
 
                             </div>
 
